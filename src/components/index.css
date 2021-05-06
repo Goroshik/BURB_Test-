@@ -1,39 +1,15 @@
-.flexColumn {
-  display: flex;
-  flex-direction: column;
-}
-
-.flexRow {
+.details {
   display: flex;
   flex-direction: row;
 }
 
-.flexSpaceEvently {
-  justify-content: space-evenly;
-}
-
-.flexSpaceBetween {
-  justify-content: space-between;
-}
-
-.marginTopNull {
-  margin-top: 0;
-}
-
-.marginBottom {
-  margin-bottom: 5em;
-}
-
-.marginTop {
-  margin-top: 5em;
-}
-
-.showDescription {
+.margin_left_5 {
   margin-left: 5%;
 }
 
-.episodeListItem {
-  height: 15%;
+.listItem {
+  display: flex;
+  flex-direction: row;
 
   padding: 2%;
   margin-bottom: 2%;
@@ -41,7 +17,18 @@
   border: 1px solid #fff
 }
 
-.episodeListItem:hover {
+.movieList {
+  display: flex;
+  flex-direction: column;
+
+  padding: 2%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+
+  border: 1px solid #fff
+}
+
+.listItem:hover {
   border: 1px solid #000
 }
 
@@ -52,4 +39,23 @@
 .loadMore:hover {
   cursor: pointer;
   color: blue;
+}
+
+@media (max-width: 950px) { 
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listItem {
+    display: flex;
+    flex-direction: column;
+  
+    padding: 2%;
+    margin-bottom: 2%;
+  
+    border: 1px solid #fff
+  }
+
+  
 }

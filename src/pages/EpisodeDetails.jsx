@@ -9,19 +9,17 @@ import { FullDetailView } from '../components/Details';
 function EpisodeDetails({ dispatch, episodes, current }) {
   const params = useParams();
 
-  console.log(params)
   const fetchData = () => {
     dispatch(actions.setCurrentEpisode(episodes, params.id));
   }
 
   useEffect(() => {
-    console.log(22222)
     fetchData();
-  })
+  }, [])
 
   return (
     <div>
-      <FullDetailView data={current} />
+      <FullDetailView data={current} isEpisode={true} />
     </div>
   );
 }

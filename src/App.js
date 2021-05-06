@@ -23,12 +23,12 @@ function App() {
               <SearchShow />
             </Route>
             <Route
-              path="/movies/:id/episodes/:epid"
-              render={routeProps => <EpisodeDetails {...routeProps} key={document.location.href} />}
-            />
-            <Route
               path="/movies/:id"
               render={routeProps => <MovieDetails {...routeProps} key={document.location.href} />}
+            />
+            <Route
+              path="/episodes/:id"
+              render={routeProps => <EpisodeDetails {...routeProps} key={document.location.href} />}
             />
           </Switch>
         </div>

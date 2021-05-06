@@ -11,7 +11,8 @@ const setCurrentMovie = (data) => ({ type: MOVIES_CONST.SET_CURRENT_MOVIE, data 
 
 const setEpisodes = (data) => ({ type: EPISODES_CONSTS.SET_EPISODES, data })
 const setCurrentEpisode = (all, currentId) => {
-  const result = all.find(ep => ep.id === currentId)
+  const result = all.find(ep => ep.id === Number(currentId))
+
   return { type: EPISODES_CONSTS.SET_CURRENT_EPISODE, data: result }
 }
 
@@ -22,11 +23,6 @@ function* watchMoviesRequest() {
 function* watchCurrentMovieRequest() {
   yield takeEvery(MOVIES_CONST.REQUEST_CURRENT_MOVIE, fetchCurrentMovieAsync);
 }
-
-function* watchCurrentMovie() {
-  yield takeEvery(EPISODES_CONSTS.SET_CURRENT_EPISODE, fetchCurrentMovieAsync);
-}
-
 
 export function* fetchMoviesAsync(action) {
   const movies = yield call(() => {

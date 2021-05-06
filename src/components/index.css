@@ -1,0 +1,55 @@
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexSpaceEvently {
+  justify-content: space-evenly;
+}
+
+.flexSpaceBetween {
+  justify-content: space-between;
+}
+
+.marginTopNull {
+  margin-top: 0;
+}
+
+.marginBottom {
+  margin-bottom: 5em;
+}
+
+.marginTop {
+  margin-top: 5em;
+}
+
+.showDescription {
+  margin-left: 5%;
+}
+
+.episodeListItem {
+  height: 15%;
+
+  padding: 2%;
+  margin-bottom: 2%;
+
+  border: 1px solid #fff
+}
+
+.episodeListItem:hover {
+  border: 1px solid #000
+}
+
+.loadMore {
+  text-align: right;
+}
+
+.loadMore:hover {
+  cursor: pointer;
+  color: blue;
+}

@@ -14,7 +14,7 @@
   padding: 2%;
   margin-bottom: 2%;
 
-  border: 1px solid #fff
+  border: 1px solid #fff;
 }
 
 .movieList {
@@ -25,11 +25,11 @@
   margin-top: 5%;
   margin-bottom: 2%;
 
-  border: 1px solid #fff
+  border: 1px solid #fff;
 }
 
 .listItem:hover {
-  border: 1px solid #000
+  border: 1px solid #000;
 }
 
 .loadMore {
@@ -54,7 +54,7 @@
     padding: 2%;
     margin-bottom: 2%;
   
-    border: 1px solid #fff
+    border: 1px solid #fff;
   }
 
   

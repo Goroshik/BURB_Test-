@@ -8,7 +8,7 @@ export const searchByQuery = async (searchString = 'The Powerpuff Girls') => {
       res(result)
     })
   })
-}
+};
 
 export const getMovieById = async (id) => {
   return new Promise((res, rej) => {
@@ -18,7 +18,7 @@ export const getMovieById = async (id) => {
       res(result)
     })
   })
-}
+};
 
 export const getEpisodesByMovieId = async (id) => {
   return new Promise((res, rej) => {
@@ -28,7 +28,7 @@ export const getEpisodesByMovieId = async (id) => {
       res(result)
     })
   })
-}
+};
 
 export const getEpisode = async (mId, eId) => {
   return new Promise((res, rej) => {
@@ -38,4 +38,4 @@ export const getEpisode = async (mId, eId) => {
       res(result)
     })
   })
-}
+};

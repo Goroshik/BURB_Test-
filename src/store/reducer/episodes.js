@@ -3,7 +3,7 @@ import { EPISODES_CONSTS } from '../constants';
 const initState = {
   data: [],
   current: {}
-}
+};
 
 function reducer(state = initState, action) {
   switch (action.type) {

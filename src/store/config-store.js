@@ -5,7 +5,7 @@ import 'regenerator-runtime/runtime';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { moviesReduce, episodesReduce } from './reducer';
-import { rootSaga, actions } from './actions'
+import { rootSaga } from './actions';
 
 const reducers = combineReducers({
   movies: moviesReduce,

@@ -72,6 +72,6 @@ export const MovieList = ({ data }) => {
           <b>...load more episodes</b>
         }
       </span>
-    </div >
+    </div>
   )
 }

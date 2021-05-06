@@ -3,7 +3,7 @@ import { MOVIES_CONST } from '../constants';
 const initState = {
   data: [],
   current: {}
-}
+};
 
 function reducer(state = initState, action) {
   switch (action.type) {
@@ -20,6 +20,6 @@ function reducer(state = initState, action) {
     default:
       return state;
   }
-}
+};
 
 export default reducer;

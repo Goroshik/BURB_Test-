@@ -4,6 +4,6 @@ const MOVIES_CONST = {
 
   SET_MOVIES: 'SET_MOVIES',
   SET_CURRENT_MOVIE: 'SET_CURRENT_MOVIES'
-}
+};
 
 export default MOVIES_CONST;

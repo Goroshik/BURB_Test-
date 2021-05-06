@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -6,16 +6,12 @@ import { actions } from '../store/actions';
 
 import { FullDetailView } from '../components/Details';
 
-function EpisodeDetails({ dispatch, episodes, current }) {
+function EpisodeDetails({ episodes, current, setEpisode }) {
   const params = useParams();
 
-  const fetchData = () => {
-    dispatch(actions.setCurrentEpisode(episodes, params.id));
-  }
-
   useEffect(() => {
-    fetchData();
-  }, [])
+    setEpisode(episodes, params.id);
+  }, [episodes, params.id, setEpisode])
 
   return (
     <div>
@@ -32,7 +28,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapStateToDispatch = (dispatch) => {
+  return {
+    setEpisode: (episodes, episodeId) => dispatch(actions.setCurrentEpisode(episodes, episodeId))
+  }
+};
+
 export default connect(
   mapStateToProps,
-  null // Generaly its the place of mapStateToDispatch
+  mapStateToDispatch
 )(EpisodeDetails);

@@ -7,16 +7,12 @@ import { actions } from '../store/actions';
 import { FullDetailView } from '../components/Details';
 import { EpisodeList } from '../components/Lists';
 
-function MovieDetails({ dispatch, movie, episodes }) {
+function MovieDetails({ movie, episodes, getCurrentMovie }) {
   const params = useParams();
 
-  const fetchData = () => {
-    dispatch(actions.requestCurrentMovie(params.id))
-  }
-
   useEffect(() => {
-    fetchData()
-  }, [])
+    getCurrentMovie(params.id);
+  }, [params.id, getCurrentMovie])
 
   return (
     <div>
@@ -33,7 +29,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapStateToDispatch = (dispatch) => {
+  return {
+    getCurrentMovie: (id) => dispatch(actions.requestCurrentMovie(id))
+  }
+};
+
 export default connect(
   mapStateToProps,
-  null // Generaly its the place of mapStateToDispatch
+  mapStateToDispatch
 )(MovieDetails);

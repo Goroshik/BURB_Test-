@@ -8,24 +8,20 @@ import { actions } from '../store/actions';
 
 import './index.css';
 
-function SearchMoviesPage({ dispatch, movies }) {
+function SearchMoviesPage({ movies, getMovies }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearching, setIsSearching] = useState(false);
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-  const fetchData = () => {
-    dispatch(actions.requestMovies(debouncedSearchTerm))
-  }
-
   useEffect(() => {
     if (debouncedSearchTerm) {
       setIsSearching(true);
 
-      fetchData();
+      getMovies(debouncedSearchTerm);
       setIsSearching(false);
     }
-  }, [debouncedSearchTerm]);
+  }, [debouncedSearchTerm, getMovies]);
 
   return (
     <>
@@ -50,7 +46,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapStateToDispatch = (dispatch) => {
+  return {
+    getMovies: (searchString) => dispatch(actions.requestMovies(searchString))
+  };
+};
+
 export default connect(
   mapStateToProps,
-  null // Generaly its the place of mapStateToDispatch
+  mapStateToDispatch
 )(SearchMoviesPage);
